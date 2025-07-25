@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606597781163",
+    "project_id": "shopswift-6e59e",
+    "storage_bucket": "shopswift-6e59e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606597781163:android:3c09f8ebb881964399c9ee",
+        "android_client_info": {
+          "package_name": "com.example.shopswift"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADY_PiYK-_YlGHi_qm0fTD7T2Pv4YTcD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
