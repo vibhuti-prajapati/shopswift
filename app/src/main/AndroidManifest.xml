@@ -23,6 +23,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".homeScreen" />
+        <activity android:name=".OrdersActivity" />
+        <activity android:name=".ProductsActivity" />
+        <activity android:name=".ProfileActivity" />
     </application>
 
 </manifest>

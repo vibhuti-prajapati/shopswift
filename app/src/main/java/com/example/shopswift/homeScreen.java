@@ -3,34 +3,52 @@ package com.example.shopswift;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class homeScreen extends AppCompatActivity {
+
+    BottomNavigationView bottomNav;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+
+        bottomNav = findViewById(R.id.bottomNav);
+
+        // Load default fragment
+        loadFragment(new homeFragment());
 
         bottomNav.setOnItemSelectedListener(item -> {
-            int itemId = item.getItemId();
+            Fragment selectedFragment = null;
 
+            int itemId = item.getItemId();
             if (itemId == R.id.nav_home) {
-                // Already on home
-                return true;
+                selectedFragment = new homeFragment();
             } else if (itemId == R.id.nav_orders) {
-                startActivity(new Intent(homeScreen.this, OrdersActivity.class));
-                return true;
+                selectedFragment = new ordersFragment();
             } else if (itemId == R.id.nav_profile) {
-                startActivity(new Intent(homeScreen.this, ProfileActivity.class));
-                return true;
+                selectedFragment = new profileFragment();
+            } else if (itemId == R.id.nav_products) {
+                selectedFragment = new productsFragment();
             }
 
+            if (selectedFragment != null) {
+                loadFragment(selectedFragment);
+                return true;
+            }
             return false;
         });
 
-
     }
 
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.home_fragment_container, fragment)
+                .commit();
+    }
 }
+
