@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FAFAFA">
+
+    <!-- Top App Bar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:padding="16dp"
+        app:title="Edit Profile"
+        app:titleTextColor="#000"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <!-- Content Scroll -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <!-- Profile Image -->
+            <ImageView
+                android:id="@+id/storeLogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_store_placeholder"
+                android:scaleType="centerCrop"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/circle_background" />
+
+            <TextView
+                android:id="@+id/editLogoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Logo"
+                android:textColor="#0080FF"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <!-- Store Name -->
+            <EditText
+                android:id="@+id/editStoreName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Store Name"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#000" />
+
+            <!-- Handle -->
+            <EditText
+                android:id="@+id/editStoreHandle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Store Handle"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="#000" />
+
+            <!-- Store Link -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp">
+
+                <EditText
+                    android:id="@+id/editLinkPrefix"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="your-store-name"
+                    android:enabled="false"
+                    android:backgroundTint="#000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=".dm2buy.com"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="4dp"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="This is the link to your dm2buy website. Don't use any special characters or spaces."
+                android:textSize="12sp"
+                android:textColor="#888888"
+                android:layout_marginTop="4dp" />
+
+            <!-- Location -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/selectedCityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select City"
+                    android:textSize="10sp"
+                    android:textColor="#000"
+                    android:layout_marginEnd="8dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/locationarrow"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/outline_arrow_right_24"
+                    android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select your nearest city so we can invite you for our ongoing offline pop-ups and exhibitions"
+                android:textSize="12sp"
+                android:textColor="#888888" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
